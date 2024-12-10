@@ -1,9 +1,6 @@
 package mk.finki.ukim.mk.labb.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -17,12 +14,14 @@ public class Album {
     @GeneratedValue
     private Long id;
     private String name;
-    private String genre;
+//    private String genre;
+    @ManyToOne
+    private Genre genre;
     private String releaseYear;
     @OneToMany(mappedBy = "album")
     private List<Song> songList;
 
-    public Album(String name, String genre, String releaseYear, List<Song> songList) {
+    public Album(String name, Genre genre, String releaseYear, List<Song> songList) {
 //        this.id = (long) (Math.random()*1000);
         this.name = name;
         this.genre = genre;

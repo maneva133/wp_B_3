@@ -40,6 +40,27 @@
 
     <a th:href="@{/songs/add-song}">Add Song</a>
 
+   <form th:action="@{/songs/genre}" method="get">
+
+
+
+
+    <select id="genre" name="genre" required>
+        <option th:each="genre : ${genres}"
+                th:value="${genre.id}"
+                th:text="${genre.name}">
+<!--                th:selected="${song != null and album.id != null and album.id == song.album.id}">-->
+
+        </option>
+    </select>
+       <button type="submit"></button>
+
+<!--       <div th:each="${songsGenre}"></div>-->
+    </form>
+    <ul th:each="songsGenre: ${songGenres}">
+    <li th:text="${songsGenre.getName()}"></li>
+    </ul>
+
 </main>
 </body>
 </html>

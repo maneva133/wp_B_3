@@ -7,5 +7,6 @@ import java.util.List;
 public interface AlbumService {
     public List<Album> findAll();
     public Album findById(Long id);
+    List<Album> findAllByGenre_Name(String genreName);
 
 }

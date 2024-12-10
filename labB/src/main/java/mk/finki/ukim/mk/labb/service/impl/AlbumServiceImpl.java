@@ -28,4 +28,9 @@ public class AlbumServiceImpl implements AlbumService {
         return albumRepository.findById(id).orElseThrow();
     }
 
+    @Override
+    public List<Album> findAllByGenre_Name(String genreName) {
+        return albumRepository.findAllByGenre_Name(genreName);
+    }
+
 }

@@ -2,6 +2,7 @@ package mk.finki.ukim.mk.labb.web.controller;
 import mk.finki.ukim.mk.labb.model.Album;
 import mk.finki.ukim.mk.labb.model.Review;
 import mk.finki.ukim.mk.labb.model.Song;
+import mk.finki.ukim.mk.labb.service.GenreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.ui.Model;
@@ -19,12 +20,14 @@ import java.util.List;
 @Controller
 @RequestMapping("/songs")
 public class SongController {
+    public final GenreService genreService;
 
     public final SongService songService;
     public final AlbumService albumService;
     @Autowired
 
-    public SongController(SongService songService, @Lazy AlbumService albumService) {
+    public SongController(GenreService genreService, SongService songService, @Lazy AlbumService albumService) {
+        this.genreService = genreService;
         this.songService = songService;
         this.albumService = albumService;
     }
@@ -33,6 +36,8 @@ public class SongController {
     public String getSongsPage(@RequestParam(required = false) String error, Model model){
 
         model.addAttribute("songs",this.songService.listSongs());
+        model.addAttribute("genres",genreService.findAll());
+
         return "listSongs";
     }
 
@@ -88,6 +93,15 @@ public class SongController {
         return "redirect:/songs";
     }
 
+
+    @GetMapping("/genre")
+    public String genre(Model model,@RequestParam Long genre){
+        model.addAttribute("songs",this.songService.listSongs());
+        model.addAttribute("id",genre);
+        model.addAttribute("genres",genreService.findAll());
+        model.addAttribute("songGenres",albumService.findAllByGenre_Name(genreService.findById(genre).orElseThrow().getName()));
+        return "listSongs";
+    }
 
 
 }

@@ -33,24 +33,24 @@ public class DataHolder {
 
 
         albums = new ArrayList<>();
-
-        albums.add(new Album("Album1","Rock","2003",new ArrayList<>()));
-        albums.add(new Album("Album2","Rock","2003",new ArrayList<>()));
-        albums.add(new Album("Album3","Rock","2003",new ArrayList<>()));
-        albums.add(new Album("Album4","Rock","2003",new ArrayList<>()));
-        albums.add(new Album("Album5","Rock","2003",new ArrayList<>()));
-        albums.add(new Album("Album6","Rock","2003",new ArrayList<>()));
-
+//
+//        albums.add(new Album("Album1","Rock","2003",new ArrayList<>()));
+//        albums.add(new Album("Album2","Rock","2003",new ArrayList<>()));
+//        albums.add(new Album("Album3","Rock","2003",new ArrayList<>()));
+//        albums.add(new Album("Album4","Rock","2003",new ArrayList<>()));
+//        albums.add(new Album("Album5","Rock","2003",new ArrayList<>()));
+//        albums.add(new Album("Album6","Rock","2003",new ArrayList<>()));
+//
 
 
 
         artistToSong = new ArrayList<>();
-        songs = new ArrayList<>();
-        songs.add(new Song("Title1", "Rock", 2003,new ArrayList<>() ,new Category("Category1"),albums.get(0)));
-        songs.add(new Song("Title2", "Pop", 2001, new ArrayList<>(),new Category("Category2"),albums.get(1)));
-        songs.add(new Song("Title3", "Rap", 2004, new ArrayList<>(),new Category("Category3"),albums.get(2)));
-        songs.add(new Song("Title4", "Rock", 2008, new ArrayList<>(),new Category("Category4"),albums.get(3)));
-        songs.add(new Song("Title5", "Pop", 1999, new ArrayList<>(),new Category("Category5"),albums.get(4)));
+//        songs = new ArrayList<>();
+//        songs.add(new Song("Title1", "Rock", 2003,new ArrayList<>() ,new Category("Category1"),albums.get(0)));
+//        songs.add(new Song("Title2", "Pop", 2001, new ArrayList<>(),new Category("Category2"),albums.get(1)));
+//        songs.add(new Song("Title3", "Rap", 2004, new ArrayList<>(),new Category("Category3"),albums.get(2)));
+//        songs.add(new Song("Title4", "Rock", 2008, new ArrayList<>(),new Category("Category4"),albums.get(3)));
+//        songs.add(new Song("Title5", "Pop", 1999, new ArrayList<>(),new Category("Category5"),albums.get(4)));
 
         categories = new ArrayList<>();
         categories.add(new Category("category1"));
