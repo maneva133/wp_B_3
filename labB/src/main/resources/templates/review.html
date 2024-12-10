@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form th:action="@{'/songs/addedReview/' + ${id}}" method="post">
+
+
+
+    <input type="text" name="reviewId"   />
+    <input type="text" name="comment"   />
+
+
+    <button type="submit" >Add</button>
+</form>
+</body>
+</html>
